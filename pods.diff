@@ -20,3 +20,15 @@ diff -ur "C:\\Users\\Olawale.Adekoya.ctr\\Downloads\\tbd\\pods\\pods.2.7.16.2\\p
  
  	}
  
+diff -ur "C:\\Users\\Olawale.Adekoya.ctr\\Downloads\\tbd\\pods\\pods.2.7.16.2\\pods/includes/general.php" "C:\\Users\\Olawale.Adekoya.ctr\\Downloads\\tbd\\pods\\pods/includes/general.php"
+--- "C:\\Users\\Olawale.Adekoya.ctr\\Downloads\\tbd\\pods\\pods.2.7.16.2\\pods/includes/general.php"	2019-11-13 23:13:00.000000000 -0500
++++ "C:\\Users\\Olawale.Adekoya.ctr\\Downloads\\tbd\\pods\\pods/includes/general.php"	2020-03-05 11:33:37.931243200 -0500
+@@ -626,7 +626,7 @@
+ 		$url = 'https';
+ 	}
+ 
+-	$url .= '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
++	$url .= !empty( $_SERVER['HTTP_HOST']) ? '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] : '';
+ 
+ 	return apply_filters( 'pods_current_url', $url );
+ }
